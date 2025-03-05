@@ -4,6 +4,7 @@ import './App.css'
 
 
 
+
 function App() {
    const {t } = useTranslation();
 
@@ -11,7 +12,8 @@ function App() {
    
   return (
      <div className="container">
-      <h1>{t("greeting")}</h1>
+      <LanguageSelector />
+      <h1>{t('greeting')}</h1>
       <p>{line1}</p>
       <span>{line2}</span>
      </div>

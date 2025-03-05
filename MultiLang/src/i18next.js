@@ -8,7 +8,7 @@ import Backend from "i18next-http-backend";
 
 i18next.use(LanguageDetector).use(initReactI18next).use(Backend).init({
    debug : true,
-   lng : "hi",
+   lng : "fr",
    fallbacklng : "en",
    returnObjects : true,
    interpolation : {

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
+
 const languages = [ 
   {code : "en" , lang : "English"},
   {code : "hi" , lang : "Hindi"},
@@ -10,31 +11,30 @@ const languages = [
 
 
 const LanguageSelector = () => {
-    const {i18next} = useTranslation();
+    const {i18n} = useTranslation();
 
     useEffect(() => {
-      document.body.dir = i18next.dir();
-    } , [i18next , i18next.language]);
+      document.body.dir = i18n.dir();
+    } , [i18n , i18n.language]);
 
     const changeLanguage = (lng) => {
-       i18next.changeLanguage(lng);
+       i18n.changeLanguage(lng);
     };
 
     return (
        <div className="btn-container">
          {languages.map((lng) => {
            return (
-             <button className={lng.code === i18next.language ? "selected" : ""}
+             <button className={lng.code === i18n.language ? "selected" : ""}
              key={lng.code}
              onClick={() => changeLanguage(lng.code)}>
 
-              {lng.lang}
-
+             {lng.lang}
              </button>
            );
          })}
        </div>
-    )
+    );
 };
 
 
